@@ -1,0 +1,372 @@
+
+
+@-webkit-keyframes pulsate-fwd {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes pulsate-fwd {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+/* Special thanks to our colleagues from Wurth France!*/
+
+.metrics-component-1 .card {
+    display: flex;
+    /* fix Intershop update 3.21.8 11th September 2021 */
+    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: 450px;
+}
+
+.metrics-component-1.card-deck {
+    margin: 0;
+    /* reset */
+    gap: 1em;
+    padding-bottom: 3em;
+}
+
+.metrics-component-1.card-deck.fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.metrics-component-1.card-deck.keep {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#appFrameCol3.col-md-9 .metrics-component-1.card-deck.keep .card {
+    flex-basis: 31%;
+}
+
+#appFrameCol3.col-md-12 .metrics-component-1.card-deck.keep .card {
+    flex-basis: 23%;
+}
+
+.metrics-component-1 .illustration .cta button:hover {
+    background-color: #fff !important;
+    border: 1px solid #000;
+    color: #000 !important;
+}
+
+.metrics-component-1 .illustration .cta button:active {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.metrics-component-1 .card {
+    border-radius: 0;
+    flex: none;
+}
+
+.metrics-component-1 .illustration {
+    border: none !important;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    position: relative;
+}
+
+.metrics-component-1 .illustration>div {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.metrics-component-1 .illustration>div>img {
+    width: 100%;
+    max-width: unset;
+}
+
+.metrics-component-1 .illustration>.cta {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    padding: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* IE11 bug fix */
+
+.metrics-component-1 .card-img-link {
+    max-width: 100% !important;
+    flex-shrink: 0 !important;
+}
+
+.metrics-component-1 .card-img-top {
+    display: block;
+    width: auto;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 10%;
+    max-height: 200px;
+}
+
+.metrics-component-1 .card-label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    background: #c00;
+    color: #fff;
+    padding: 5px 15px 3px;
+    text-transform: uppercase;
+    font-family: wuerthbold;
+    font-size: 1.6rem;
+    border-left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.metrics-component-1 .card-title {
+    margin-bottom: 0;
+    color: #000;
+}
+
+.metrics-component-1 .card-ref {
+    display: block;
+    margin-bottom: .75rem;
+    font-size: 1.3rem;
+    color: #959595;
+}
+
+.metrics-component-1 .card-price-wrapper a {
+    display: block;
+}
+
+.metrics-component-1 .card-price-before {
+    color: #c00;
+}
+
+.metrics-component-1 .card-price {
+    font-family: wuerthbold;
+    font-size: 2.6rem;
+    color: #c00;
+    line-height: 1;
+}
+
+.metrics-component-1 .card-price sup {
+    font-size: 1.2rem;
+    top: -.8em;
+}
+
+.metrics-component-1 .card-price-after {
+    display: block;
+    font-size: 1.3rem;
+}
+
+.metrics-component-1 .card-connexion {
+    text-decoration: underline !important;
+    color: #cc0000 !important;
+}
+
+.metrics-component-1 .card-connexion:hover {
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.metrics-component-1 .card-description {}
+
+.metrics-component-1 .card-video {
+    display: flex;
+    align-items: center;
+    font: normal 1.3rem wuerthbold !important;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-top: 15px;
+}
+
+.metrics-component-1 .card-video:hover {
+    text-decoration: none;
+}
+
+.metrics-component-1 .card-video .fa-youtube {
+    margin-right: 5px;
+    font-size: 2.4rem;
+}
+
+.metrics-component-1 .card-video span {
+    padding-top: 2px;
+}
+
+.metrics-component-1 ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.metrics-component-1 li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.metrics-component-1 li::before {
+    content: "";
+    display: inline-block;
+    height: 11px;
+    width: 11px;
+    background: url(https://media.wurth.fr/eshop/icons/next.svg) no-repeat;
+    background-size: 100%;
+    margin-right: 5px;
+}
+
+.metrics-component-1 .card-footer {
+    background-color: #fff;
+    border-top: 0;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.metrics-component-1 .card-footer-cta {
+    width: 100%;
+    text-align: center;
+    margin-top: -25px;
+    background-color: #fff;
+    color: #cc0000;
+    border: 1px solid #cc0000;
+    padding: 5px 20px;
+    font-family: wuerthextra_bold_cond !important;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+is .metrics-component-1 .card-footer-cta-add-to-cart {
+    background-color: #0093DD;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+
+}
+
+.metrics-component-1 .card-footer-cta:hover {
+    background-color: #cc0000;
+    color: #fff;
+    border: 1px solid
+    /* text-decoration: none; */
+}
+
+.metrics-component-1 .card-footer-cta-add-to-cart:hover {
+    background-color: #fff;
+    color: #0093DD;
+    border: 1px solid #0093DD;
+}
+
+/***** Internet Explorer, yes. ******************************************/
+
+body.ie .metrics-component-1.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: -.5em;
+}
+
+body.ie .metrics-component-1 .card {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: .5em;
+}
+
+body.ie #appFrameCol3.col-md-9 .metrics-component-1 .card {
+    width: calc(33% - (.5em * 2) + (1px * 2));
+}
+
+body.ie #appFrameCol3.col-md-12 .metrics-component-1 .card {
+    width: calc(25% - (.5em * 2) + (1px * 2));
+}
+
+/***** Responsive, mostly for Internet Explorer, yes, again. ************/
+
+@media screen and (max-width: 889px) {
+
+    body.ie #appFrameCol3.col-md-9 .metrics-component-1 .card,
+    body.ie #appFrameCol3.col-md-12 .metrics-component-1 .card {
+        width: calc(33% - (.5em * 2) + (1px * 2));
+    }
+}
+
+@media screen and (max-width: 675px) {
+
+    body.ie #appFrameCol3.col-md-9 .metrics-component-1 .card,
+    body.ie #appFrameCol3.col-md-12 .metrics-component-1 .card {
+        width: calc(50% - (.5em * 2) + (1px * 2));
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    body.ie #appFrameCol3.col-md-9 .metrics-component-1 .card,
+    body.ie #appFrameCol3.col-md-12 .metrics-component-1 .card {
+        width: calc(100% - (.5em * 2) + (1px * 2));
+    }
+}
+
+.skeleton-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.skeleton-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    height: 300px;
+}
+
+.skeleton-product {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 20px;
+    background-image: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 50%, #f2f2f2 75%);
+    background-size: 200% 100%;
+    animation: skeleton-animation 1.5s infinite;
+}
+
+@keyframes skeleton-animation {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .skeleton-card {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
