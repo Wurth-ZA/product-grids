@@ -11,6 +11,7 @@ const grid_templates = {
     '    </div>' + 
     '</div>' + 
     '<div v-else="" data-component-id="metrics-component-1" class="card-deck metrics-component-1 fill">' + 
+    '    <h1>Test Deployemnet</h1>' +
     '    <div v-for="product in products" v-bind:key="product">' + 
     '        <div class="card"><span class="card-label" style="background-color: #0000ff;">{{product.TAG}}</span>' + 
     '            <div v-if="product.Product_picture !== null"><a v-bind:href="product.Product_URL" class="card-img-link"' + 
