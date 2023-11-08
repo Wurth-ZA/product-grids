@@ -1,4 +1,15 @@
+function loadCss(url) {
+    const link = document.createElement('link');
+    link.href = url;
+    link.type = 'text/css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }
+
 function initializeProductGrid(containerId, options) {
+    if (options.cssUrl) {
+        loadCss(options.cssUrl);
+      }
     const { createApp, ref, computed } = Vue;
 
     createApp({
@@ -35,7 +46,7 @@ function initializeProductGrid(containerId, options) {
             async fetchData() {
                 try {
 
-                    const response = await fetch("https://directus.apps.onasik.co.za/items/RSA_CLEARANCE_SALE?fields=*,Material_number.*&filter[Display][_eq]=Yes");
+                    const response = await fetch(options.endpoint);
                     const data = await response.json();
 
                     this.products = data.data.map((product) => ({
