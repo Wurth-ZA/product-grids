@@ -19,6 +19,8 @@ function initializeProductGrid(containerId, options) {
                 selectedProducts: [],
                 isLoading: true,
                 fallbackImageUrl: options.fallbackImageUrl || "https://eshop.wurth.co.za/fallback-image.jpg",
+                companyCode: options.companyCode || "3128",
+                countryCode: options.countryCode || "ZAR"
             };
         },
         computed: {
@@ -68,7 +70,7 @@ function initializeProductGrid(containerId, options) {
                     const productNumbers = Array.from(new Set(this.products.map(product => product.Product_number)));
 
                     // Create a single request to get prices for all products
-                    fetch(`/is-bin/INTERSHOP.enfinity/WFS/3128-B1-Site/en_GB/-/ZAR/ViewModelDetail-AjaxGetPrice?Products%5B%5D=${productNumbers.join('&Products%5B%5D=')}&SupplierID=WuerthGroup-Wuerth&ModelName=1`)
+                    fetch(`/is-bin/INTERSHOP.enfinity/WFS/${options.companyCode}-B1-Site/en_GB/-/${options.countryCode}/ViewModelDetail-AjaxGetPrice?Products%5B%5D=${productNumbers.join("&Products%5B%5D=")}&SupplierID=WuerthGroup-Wuerth&ModelName=1`)
                         .then(response => response.json())
                         .then(priceData => {
                             //console.log('API Response - priceData:', priceData);
@@ -159,7 +161,7 @@ function initializeProductGrid(containerId, options) {
                 });
                 products = JSON.stringify(products);
                 $.ajax({
-                    url: '/is-bin/INTERSHOP.enfinity/WFS/3128-B1-Site/en_GB/-/ZAR/ViewModelDetail-AjaxAddArticlesToCurrentShoppingCart',
+                    url: `/is-bin/INTERSHOP.enfinity/WFS/${options.companyCode}-B1-Site/en_GB/-/${options.countryCode}/ViewModelDetail-AjaxAddArticlesToCurrentShoppingCart`,
                     dataType: 'html',
                     type: 'POST',
 
