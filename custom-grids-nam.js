@@ -206,6 +206,6 @@ function initializeProductGrid(containerId, options) {
         mounted() {
             this.fetchData();
         },
-        template: grid_templates[options.templateId] || templates.default,
+        template: grid_templates[options.templateId] || grid_templates.default,
     }).mount(`#${containerId}`);
 }
