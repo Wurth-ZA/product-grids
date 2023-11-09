@@ -52,7 +52,7 @@ function initializeProductGrid(containerId, options) {
                     const data = await response.json();
 
                     this.products = data.data.map((product) => ({
-                        TAG: product.TAG,
+                        TAG: product.Tag,
                         Product_URL: product.Product_URL || '',
                         Model_URL: product.Model_URL || '',
                         Product_name: product.Product_name || '',
