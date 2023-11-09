@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src = "./custom-grids-nam.js"></script>
+    <script src = "./templates.js"></script>
+    
+    <script>
+    var jq = document.createElement('script');
+    jq.src = "https://unpkg.com/vue@3.2.20/dist/vue.global.js";
+    document.getElementsByTagName('head')[0].appendChild(jq);
+jq.onload = function () {
+    // Configuration parameters for the Vue app
+    const config = {
+        endpoint: 'https://directus.apps.onasik.co.za/items/Namibia_Promotions?fields=*,Material_number.*&filter[Eshop_visible][_eq]=yes&filter[Tag][_eq]=Black Month',
+        fallbackImageUrl: 'https://your.fallback/image.jpg',
+        templateId: 'default', // You can dynamically change this to 'alternative' or any other template you have
+        
+    };
+    
+    // Call the function to initialize the Vue app inside the container with id 'app'
+    initializeProductGrid('app', config);
+};
+</script>
+</body>
+</html>
