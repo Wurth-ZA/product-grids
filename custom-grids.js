@@ -158,22 +158,23 @@ function initializeProductGrid(containerId, options) {
                     quantity: packageSize
                 });
                 products = JSON.stringify(products);
-                $.ajax({
-                    url: '/is-bin/INTERSHOP.enfinity/WFS/3128-B1-Site/en_GB/-/ZAR/ViewModelDetail-AjaxAddArticlesToCurrentShoppingCart',
-                    dataType: 'html',
-                    type: 'POST',
-
-                    data: {
-                        ShoppingCartForm: products
+                fetch(`/is-bin/INTERSHOP.enfinity/WFS/${options.companyCode}-B1-Site/en_GB/-/${options.countryCode}/ViewModelDetail-AjaxAddArticlesToCurrentShoppingCart`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded', // or 'application/json' depending on your server requirements
                     },
-                    success: function (F) {
-                        applicationFrameMessages.displayMessage(F);
-                        updateMiniBasketCounter(jsonResponse.shoppingCartItemsCount);
-                        if (forceRefresh == 1)
-                            location.reload();
-                        return false;
-                    }
-                });
+                    body: new URLSearchParams({
+                        ShoppingCartForm: JSON.stringify(products) // Assuming products is a JSON object. Adjust as needed.
+                    })
+                })
+                .then(response => response.text()) // or response.json() if the server returns JSON
+                .then(F => {
+                    applicationFrameMessages.displayMessage(F);
+                    updateMiniBasketCounter(jsonResponse.shoppingCartItemsCount); // Ensure jsonResponse is defined
+                    if (forceRefresh == 1)
+                        location.reload();
+                })
+                .catch(error => console.error('Error:', error));
                 return false;
 
 
