@@ -44,7 +44,6 @@ const grid_templates = {
     '                        <div style="background-color: black; border-radius: 7px;"><select' + 
     '                                :id="\'select_\' + product.Product_number" class="form-control"' + 
     '                                :ref="\'packSizeInput_\' + product.Product_number" v-model="product.SelectedPackUnit">' + 
-    '                                <option value=""></option>' + 
     '                                <option v-for="packunit in product.WurthPrice" :key="packunit.packingUnit"' + 
     '                                    :value="packunit.packingUnit"> {{ packunit.packingUnit }} </option>' + 
     '                            </select></div>' + 
@@ -105,7 +104,6 @@ const grid_templates = {
     '                        <div style="background-color: black; border-radius: 7px;"><select' + 
     '                                :id="\'select_\' + product.Product_number" class="form-control"' + 
     '                                :ref="\'packSizeInput_\' + product.Product_number" v-model="product.SelectedPackUnit">' + 
-    '                                <option value=""></option>' + 
     '                                <option v-for="packunit in product.WurthPrice" :key="packunit.packingUnit"' + 
     '                                    :value="packunit.packingUnit"> {{ packunit.packingUnit }} </option>' + 
     '                            </select></div>' + 

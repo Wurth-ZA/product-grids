@@ -14,13 +14,22 @@
     var jq = document.createElement('script');
     jq.src = "https://unpkg.com/vue@3.2.20/dist/vue.global.js";
     document.getElementsByTagName('head')[0].appendChild(jq);
-jq.onload = function () {
+    jq.onload = function () {
     // Configuration parameters for the Vue app
+    var collection = 'Namibia_Promotions';
+    var visible_filter='yes';
+    var tag_filter ='Black Month';
+    var template = 'namibia';
+    var companyCode = '3829';
+    var countryCode =' ZAR'
     const config = {
-        endpoint: 'https://directus.apps.onasik.co.za/items/Namibia_Promotions?fields=*,Material_number.*&filter[Eshop_visible][_eq]=yes&filter[Tag][_eq]=Black Month',
-        fallbackImageUrl: 'https://your.fallback/image.jpg',
-        templateId: 'namibia', // You can dynamically change this to 'alternative' or any other template you have
         
+        endpoint: 'https://directus.apps.onasik.co.za/items/'+collection+'?fields=*,Material_number.*&filter[Eshop_visible][_eq]='+visible_filter+'&filter[Tag][_eq]='+tag_filter,
+        fallbackImageUrl: 'https://your.fallback/image.jpg',
+        templateId: template,
+        countryCode: countryCode,
+        companyCode: companyCode,
+        cssUrl: 'standard-promo-grid.css'
     };
     
     // Call the function to initialize the Vue app inside the container with id 'app'
