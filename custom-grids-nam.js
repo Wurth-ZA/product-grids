@@ -228,6 +228,30 @@ function initializeProductGrid(containerId, options) {
                         new Swiper('.swiper-container', {
                             // Optional parameters
                             loop: true,
+                            slidesPerView: 4,
+                            spaceBetween: 10,
+                            breakpoints: {
+                                10: {
+                                    slidesPerView: 1,
+                                },
+                                576: {
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                992: {
+                                    slidesPerView: 3,
+                                },
+                                1200: {
+                                    slidesPerView: 4,
+                                },
+
+                            },
+                            scrollbar: {
+                                el: '.swiper-scrollbar',
+                                hide: false,
+                            },
                             pagination: {
                                 el: '.swiper-pagination',
                             },
