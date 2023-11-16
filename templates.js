@@ -1,4 +1,4 @@
-const grid_templates = {
+var grid_templates = {
     default:  '' + 
     '<div v-if="isLoading" class="skeleton-container">' + 
     '    <div class="skeleton-container">' + 
