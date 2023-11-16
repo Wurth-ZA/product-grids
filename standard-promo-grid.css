@@ -264,7 +264,7 @@
     text-transform: uppercase;
 }
 
-is .metrics-component-1 .card-footer-cta-add-to-cart {
+.metrics-component-1 .card-footer-cta-add-to-cart {
     background-color: #0093DD;
     color: #ffffff;
     border: 1px solid #ffffff;
