@@ -173,14 +173,13 @@ function initializeProductGrid(containerId, options) {
                     quantity: packageSize
                 });
                 products = JSON.stringify(products);
+                var requestBody = new URLSearchParams({ ShoppingCartForm: products });
                 fetch(`/is-bin/INTERSHOP.enfinity/WFS/${options.companyCode}-B1-Site/en_GB/-/${options.countryCode}/ViewModelDetail-AjaxAddArticlesToCurrentShoppingCart`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded', // or 'application/json' depending on your server requirements
                     },
-                    body: new URLSearchParams({
-                        ShoppingCartForm: JSON.stringify(products) // Assuming products is a JSON object. Adjust as needed.
-                    })
+                    body: requestBody,
                 })
                 .then(response => response.text()) // or response.json() if the server returns JSON
                 .then(F => {
