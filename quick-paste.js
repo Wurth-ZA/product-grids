@@ -8,8 +8,8 @@ function loadScript(src, callback) {
     document.head.appendChild(script);
 }
 var vue_global ="https://unpkg.com/vue@3.2.20/dist/vue.global.js";
-var grid_script ="https://cdn.jsdelivr.net/gh/Wurth-ZA/product-grids@dev/custom-grids-nam.js";
-var template_script="https://cdn.jsdelivr.net/gh/Wurth-ZA/product-grids@dev/templates.js";
+var grid_script ="https://wurth-za.github.io/product-grids/custom-grids-nam.js";
+var template_script="https://wurth-za.github.io/product-grids/templates.js";
 // Load Vue.js
 loadScript(vue_global, function () {
     // Load custom-grids-nam.js
@@ -29,7 +29,7 @@ loadScript(vue_global, function () {
                 templateId: template,
                 countryCode: countryCode,
                 companyCode: companyCode,
-                cssUrl: 'https://cdn.jsdelivr.net/gh/Wurth-ZA/product-grids@dev/standard-promo-grid.css',
+                cssUrl: 'https://wurth-za.github.io/product-grids/standard-promo-grid.css',
                 swiperEnabled: swiperEnabled,
             };
 

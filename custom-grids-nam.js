@@ -20,8 +20,8 @@ function initializeProductGrid(containerId, options) {
         loadCss(options.cssUrl);
       }
     if (options.swiperEnabled){
-        loadCss('https://unpkg.com/swiper/swiper-bundle.min.css');
-        loadJs('https://unpkg.com/swiper/swiper-bundle.min.js')
+        loadCss('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+        loadJs('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js')
     }
     const { createApp, ref, computed } = Vue;
 
@@ -226,18 +226,18 @@ function initializeProductGrid(containerId, options) {
                         clearInterval(checkSwiperInterval);
                         new Swiper('.swiper-container', {
                             // Optional parameters
-                            loop: true,
+                            loop: false,
                             slidesPerView: 4,
                             spaceBetween: 10,
                             breakpoints: {
                                 10: {
-                                    slidesPerView: 1,
+                                    slidesPerView: 2,
                                 },
                                 576: {
-                                    slidesPerView: 1,
+                                    slidesPerView: 2,
                                 },
                                 768: {
-                                    slidesPerView: 2,
+                                    slidesPerView: 3,
                                 },
                                 992: {
                                     slidesPerView: 3,
@@ -246,7 +246,7 @@ function initializeProductGrid(containerId, options) {
                                     slidesPerView: 4,
                                 },
 
-                            },
+                            },/* 
                             scrollbar: {
                                 el: '.swiper-scrollbar',
                                 hide: false,
@@ -257,7 +257,7 @@ function initializeProductGrid(containerId, options) {
                             navigation: {
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev',
-                            },
+                            },  */
                         });
                     }
                 }, 100);

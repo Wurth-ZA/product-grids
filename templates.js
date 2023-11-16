@@ -130,7 +130,8 @@ const grid_templates = {
     '        </div>' + 
     '    </div>' + 
     '</div>' + 
-    '<div v-else="" data-component-id="metrics-component-1" class="card-deck metrics-component-1 fill swiper-container">' +
+    '<div class="swiper">'+
+    '<div v-else="" class=" card-deck metrics-component-1 fill swiper-container">' +
     '   <div class="swiper-wrapper">'+ 
     '    <div v-for="product in products" v-bind:key="product" class="swiper-slide">' + 
     '        <div class="card"><span class="card-label" style="background-color: #0000ff;">{{product.TAG}}</span>' + 
@@ -180,6 +181,7 @@ const grid_templates = {
     '        </div>' + 
     '    </div>' + 
     '   <div class="swiper-scrollbar"></div>'+
+    '</div>'+
     '</div>',
     alternative: `<div>Alternative Template</div>`, 
     
