@@ -5,11 +5,24 @@ function loadCss(url) {
     link.rel = 'stylesheet';
     document.head.appendChild(link);
   }
+function loadJs(url) {
+    const script = document.createElement('script');
+    script.src = url;
+    script.type = 'text/javascript';
+    document.head.appendChild(script);
+}
+function isSwiperLoaded() {
+    return typeof Swiper !== 'undefined';
+}
 
 function initializeProductGrid(containerId, options) {
     if (options.cssUrl) {
         loadCss(options.cssUrl);
       }
+    if (options.swiperEnabled){
+        loadCss('https://unpkg.com/swiper/swiper-bundle.min.css');
+        loadJs('https://unpkg.com/swiper/swiper-bundle.min.js')
+    }
     const { createApp, ref, computed } = Vue;
 
     createApp({
@@ -207,6 +220,26 @@ function initializeProductGrid(containerId, options) {
         },
         mounted() {
             this.fetchData();
+            if (options.swiperEnabled) {
+                // Check every 100ms if Swiper is loaded, then initialize
+                let checkSwiperInterval = setInterval(() => {
+                    if (isSwiperLoaded()) {
+                        clearInterval(checkSwiperInterval);
+                        new Swiper('.swiper-container', {
+                            // Optional parameters
+                            loop: true,
+                            pagination: {
+                                el: '.swiper-pagination',
+                            },
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                        });
+                    }
+                }, 100);
+            }
+        
         },
         template: grid_templates[options.templateId] || grid_templates.default,
     }).mount(`#${containerId}`);

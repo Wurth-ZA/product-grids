@@ -19,9 +19,10 @@
     var collection = 'Namibia_Promotions';
     var visible_filter='yes';
     var tag_filter ='Black Month';
-    var template = 'namibia';
+    var template = 'namibia_swiper';
     var companyCode = '3829';
-    var countryCode =' ZAR'
+    var countryCode ='NAD'
+    var swiperEnabled= true
     const config = {
         
         endpoint: 'https://directus.apps.onasik.co.za/items/'+collection+'?fields=*,Material_number.*&filter[Eshop_visible][_eq]='+visible_filter+'&filter[Tag][_eq]='+tag_filter,
@@ -29,7 +30,8 @@
         templateId: template,
         countryCode: countryCode,
         companyCode: companyCode,
-        cssUrl: 'standard-promo-grid.css'
+        cssUrl: 'standard-promo-grid.css',
+        swiperEnabled:swiperEnabled,
     };
     
     // Call the function to initialize the Vue app inside the container with id 'app'
